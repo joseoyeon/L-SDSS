@@ -3,11 +3,9 @@ DFC-TECH-2023
 
 # docx_GUI
 
-- 워드 파일 전처리 후 분류하는 코드 정리 
+- 워드 파일 전처리 후 분류하는 코드 정리
 
-![image](https://github.com/joseoyeon/DFC-TECH-2023/assets/46625602/2676bf73-05de-4672-9a13-fb06b49b148c)
-
-
+![image](https://github.com/joseoyeon/DFC-TECH-2023/assets/46625602/babde063-5dc9-49a7-9571-d14297f4d2f7)
 
 ---
 
