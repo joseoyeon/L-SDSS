@@ -34,10 +34,7 @@ A.	본 예시에서는 NapiorOne에서 제공하는 데이터 셋을 대상으�
 ![image](https://github.com/joseoyeon/DFC-TECH-2023/assets/46625602/86a253f8-7e53-468c-9445-2ecc3e142445)
 
 
-2.	Word Search 프로그램을 실행합니다.  실행 파일은 WordSearch.exe 입니다. 
- 
-![image](https://github.com/joseoyeon/DFC-TECH-2023/assets/46625602/189b2597-7716-4295-8b90-d18acdf22c1d)
-
+2.	Word Search 프로그램을 실행합니다. 
  
 3.	Word Search 프로그램을 실행하여 문서 데이터 셋이 존재하는 폴더 경로를 넣고,  프로그램이 출력한 전처리 csv 를 저장할 저장할 경로를 넣습니다.
 * GUI가 나타나기 까지 약 10초정도의 시간이 필요합니다
