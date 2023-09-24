@@ -5,7 +5,8 @@ DFC-TECH-2023
 
 - 워드 파일 전처리 후 분류하는 코드 정리 
 
-![image](https://github.com/joseoyeon/DFC-2023/assets/46625602/7cb639cf-378f-4cc4-a20f-4eb69356f9fc)
+![image](https://github.com/joseoyeon/DFC-TECH-2023/assets/46625602/2676bf73-05de-4672-9a13-fb06b49b148c)
+
 
 
 ---
