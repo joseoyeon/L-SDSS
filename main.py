@@ -13,7 +13,10 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import Normalizer
 import functools
 from PyQt5.QtCore import QThread, pyqtSignal
+from PyQt5.QtGui import QIcon
 
+# 데이터 값 실수. 소수점 두째자리까지 표시
+pd.options.display.float_format = '{:.4f}'.format
 
 ## 전처리 프로세스 클래스
 class PreProcessingThread(QThread):
@@ -110,9 +113,9 @@ class WindowClass(QMainWindow):
             self.ui.TableViewData = PandasModel(select_data[['file_name']])
             self.ui.fulldataView.setModel(self.ui.TableViewData)
 
-            self.ui.feature_count.setRange(0, len(select_data.columns))
+            self.ui.feature_count.setRange(0, len(select_data.columns) -1)
             self.ui.feature_count.setSingleStep(1)
-            self.ui.feature_count.setValue(len(select_data.columns))
+            self.ui.feature_count.setValue(len(select_data.columns) -1)
         else:
             QMessageBox.about(self, "Error", "Not selected!")
 
@@ -202,6 +205,7 @@ class WindowClass(QMainWindow):
 
             # 컬럼 뷰에 보이기 dataframe 보이기
             matrix.columns = ["Similarity"]
+            matrix.loc[:, 'Similarity'] = matrix['Similarity'].apply(lambda x: x if x <= 1 else 1.00)
             self.ui.dataView.setModel(PandasModel(matrix.reset_index()))
         else:
             QMessageBox.about(self, "Error", "Not selected!")
@@ -220,9 +224,9 @@ class WindowClass(QMainWindow):
 
             exported_data.to_csv(export_output_path, encoding='utf-8-sig')
 
-            QMessageBox.about(self, "Export CSV", f"Output Path is \n{export_output_path}")
+            QMessageBox.about(self, "CSV가 추출되었습니다", f"추출 경로: \n{export_output_path}")
         except:
-            QMessageBox.about(self, "Export CSV ERROR", f"NOT EXPORT DATA")
+            QMessageBox.about(self, "CSV 추출 오류", f"데이터를 추출할 수 없습니다")
 
     def filter(self, filter_text, ):
 
@@ -239,7 +243,7 @@ class WindowClass(QMainWindow):
         try:
             os.startfile(fileopenpath)
         except:
-            QMessageBox.about(self, "FileOpen ERROR", fileopenpath)
+            QMessageBox.about(self, "파일 열기 오류", fileopenpath)
 
     def start_preprocessing(self):
         self.thread = PreProcessingThread(self.ui.folder_path.displayText(), self.ui.output_Path.displayText())
@@ -251,11 +255,12 @@ class WindowClass(QMainWindow):
     def processing_finished(self):
         self.ui.PreProcessing.setEnabled(True)
         self.thread = None
-        QMessageBox.information(self, "Pre-processing Finished", "Pre-processing finished successfully!")
+        QMessageBox.information(self, "Pre-processing 성공", "Pre-processing finished successfully!")
 
     def __init__(self):
         super().__init__()
         self.ui = Ui_WORD()
+        self.setWindowIcon(QIcon('WORD_LOGO.ico'))
         self.ui.setupUi(self)
         self.ui.TableViewData = None
         self.ui.selectopenfile_name = None
@@ -289,7 +294,6 @@ class WindowClass(QMainWindow):
         # 검색 창 활성화
         filter_with_model = functools.partial(self.filter)
         self.ui.SearchFileName.textChanged.connect(filter_with_model)
-
 
 if __name__ == "__main__":
     # QApplication : 프로그램을 실행시켜주는 클래스

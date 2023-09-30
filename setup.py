@@ -6,7 +6,7 @@ include_files = ['DOCX_feature_extraction.py',
                  'WORD_main.py',
                  'WORD_LOGO.ico',
                  "D:\GITHUB\AI_WORD_GUI_실행 파일\msvcp140.dll",
-                 "D:\GITHUB\AI_WORD_GUI_실행 파일\sklearn\.libs\vcomp140.dll"]
+                 "D:\GITHUB\AI_WORD_GUI_실행 파일\sklearn\.libs\/vcomp140.dll"]
 
 includes = ['PyQt5.QtWidgets', 'PyQt5.QtCore', 'PyQt5.QtGui',
             'pandas', 'numpy', 'sklearn', 'functools',

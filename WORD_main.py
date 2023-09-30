@@ -243,7 +243,7 @@ class Ui_WORD(object):
     # setupUi
 
     def retranslateUi(self, WORD):
-        WORD.setWindowTitle(QCoreApplication.translate("WORD", u"Word Search", None))
+        WORD.setWindowTitle(QCoreApplication.translate("WORD", u"Word Search: 외형적 특징이 유사한 MS Word (.docx) 문서 검색 도구", None))
         self.actionEXIT_Q.setText(QCoreApplication.translate("WORD", u"EXIT(Q)", None))
         self.OutputPath.setText(QCoreApplication.translate("WORD", u"\ucd9c\ub825\ud30c\uc77c\uacbd\ub85c", None))
         self.FolderPath.setText(QCoreApplication.translate("WORD", u"\ud3f4\ub354 \uacbd\ub85c", None))
@@ -258,7 +258,7 @@ class Ui_WORD(object):
         self.Feature.setText(QCoreApplication.translate("WORD", u"Feature \uc120\uc815", None))
         self.simularity_title.setText(QCoreApplication.translate("WORD", u"<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">\uc720\uc0ac\ub3c4 \uce21\uc815 \uc54c\uace0\ub9ac\uc998</span></p></body></html>", None))
         self.title2.setText(QCoreApplication.translate("WORD", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">\uc6cc\ub4dc \ud30c\uc77c \uc720\uc0ac\ub3c4 \uac80\uc0c9</span></p></body></html>", None))
-        self.export_csv.setText(QCoreApplication.translate("WORD", u"Export CSV", None))
+        self.export_csv.setText(QCoreApplication.translate("WORD", u"CSV 추출하기", None))
         self.label_4.setText(QCoreApplication.translate("WORD", u"<html><head/><body><p align=\"center\">\uac80\uc0c9 : </p></body></html>", None))
         self.preprocess_file.setText(QCoreApplication.translate("WORD", u"\ud30c\uc77c \ub85c\ub4dc", None))
         self.search_similarity.setText(QCoreApplication.translate("WORD", u"\uac80\uc0c9", None))
