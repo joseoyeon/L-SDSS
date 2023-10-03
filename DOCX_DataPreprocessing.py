@@ -99,6 +99,3 @@ def datapreprocessing (output_dataframe, output_csvfile=None) :
     if output_csvfile != None :
         output_dataframe.to_csv(output_csvfile,index=False, encoding="utf-8-sig")
     return output_dataframe
-
-# output_dataframe = pd.read_csv("[20230329] testpre.csv", encoding='utf-8')
-# datapreprocessing (output_dataframe, "[20230329] PCA 처리 안한 중간 전처리TEST.csv")
