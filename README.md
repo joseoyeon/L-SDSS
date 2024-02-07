@@ -1,4 +1,4 @@
-# DFC-TECH-2023
+# A layout-based authorship attribution analysis for clustering author groups of E-documents
 
 ## 문서의 외형적 구조를 결정하는 서식 데이터를 이용한 검색 시스템
 
