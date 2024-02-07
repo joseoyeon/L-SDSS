@@ -1,4 +1,4 @@
-## 분석한 MS-WORD 특징
+# 분석한 MS-WORD 특징
  본 연구에서 분석한 Word(.docx) 파일에 포함된 사용자 서식 설정 값을 세부적으로 목록화아여 정리한다. 사용자 서식 설정 값은 document.xml/style.xml/fontTalble.xml/header.xml/footer.xml 에 포함되며, 각 파일에 포함된 서식 설정 값을 표로 정리했다. 정리한 표가 갖는 컬럼은 파일내 속성 경로, 속성명, 속성 내용, 필수 여부로, 각 컬럼에 대한 설명은 아래와 같다. 
  
 * 파일 내 속성 경로 : xml 파일에서 해당 서식 설정을 찾기 위해 거쳐야 할 하위 자식 요소(element) 경로를 뜻한다. 
@@ -6,7 +6,7 @@
 * 속성 내용 : 해당 서식 설정 값에 대한 설명이다. 
 * 필수 여부 : 사용자가 특별히 설정한 값이 없어도 사전 정의된 (default) 값으로 저장되어, 사용자의 설정 여부와 관계없이 필수적으로 존재하는 속성(attribute)에 대해서는 “필수”, 사용자가 설정할 때만 존재하는 속성(attribute)에 대해서는 “선택” 으로 표기했다. 
 
-###	DOCUMENT.XML 특징
+##	DOCUMENT.XML 특징
 /word/document.xml : Microsoft Word문서의 실제 내용을 포함하는 XML 파일이다. 사용자가 입력한 텍스트 데이터와 그에 따른 문단의 서식, 글꼴, 크기, 스타일과 같은 서식 설정 값, 그림, 표, 등 문서를 구성하는 요소들이 이 파일에 포함된다.
 
 파일 내 속성 경로 | 속성 명 | 속성 내용 | 필수 여부
@@ -39,11 +39,11 @@
   | char-space | 문서의 줄당 문자 수 설정 | 선택
 
 
-###	STYLE.XML 특징 
+##	STYLE.XML 특징 
 /word/style.xml : Microsoft Word 문서에서 사용되는 스타일을 정의하는 XML 파일이다. 문서의 서식, 글꼴, 크기, 간격 등을 지정하는 스타일 요소들이 포함된다. 문서 전체에 적용되는 기본 스타일부터 문서 내 정의된 폰트 스타일 까지 다양한 스타일이 포함된다.
 서식 추출은  styles.xml 파일 내 자식 요소 중 "rPrDefault", "pPrDefault", "style" 태그를 가진 노드의 자식 요소를 순환하며 해당 요소의 속성의 키와 값을 추출한다. \\
 
-* style.xml 내 rPrDefault 속성 정리
+### style.xml 내 rPrDefault 속성 정리
 
 rPrDefault는 현재 문서에 대한 기본 실행 속성 집합을 지정한다. 실제 실행 속성은 현재 요소의 rPr 하위 요소 내에 저장된다. 이 요소가 생략되면 현재 문서의 기본 실행 속성이 존재하지 않는다. 즉, 문서에 기본 실행 속성이 정의되지 않는다면 기본값은 응용프로그램에서 정의한 내용으로 표현된다. 
 
@@ -111,7 +111,7 @@ rPrDefault는 현재 문서에 대한 기본 실행 속성 집합을 지정한�
 [rPrDefault]-[rPr]-[wx:sym] | val | 기본 편지 병합 문서가 표시하는 활성   레코드 지정 | 필수
 [rPrDefault]-[rPr]-[aml:annotation] | val | 기본 편지 병합 문서가 표시하는 활성   레코드 지정 | 필수
 
-* style.xml 내 pPrDefault 속성 정리
+### style.xml 내 pPrDefault 속성 정리
 
 pPrDefault는 현재 문서에 대한 기본 단락 속성 집합을 지정한다. 실제 단락 속성은 현재 요소의 pPr 자식 요소 내에 저장된다. 이 요소가 생략되면 현재 문서의 기본 단락 속성이 존재하지 않는다. 즉, 문서에 기본 실행 속성이 정의되지 않는다면 기본값은 응용프로그램에서 정의한 내용으로 표현된다.  
 
@@ -135,7 +135,7 @@ pPrDefault는 현재 문서에 대한 기본 단락 속성 집합을 지정한�
   | firstLineChars | 들여쓰기 첫줄 간격 - 글자간격으로   설정된 경우만 확인됨 | 선택
 [pPrDefault]-[jc] | val | 문단에 대한 기본 정당성을 지정   (left/center/right/both/medium-kashida/distribute/list-tab/high-kashida/low-kashida/thai-distribute) | 선택
 
-* style.xml 내 문단, 글자, 표 번호의 스타일 명 속성 리스트
+### style.xml 내 문단, 글자, 표 번호의 스타일 명 속성 리스트
 
 style 요소는 type 속성(attribute) 값으로 문단, 글자, 표, 번호 지정(Paragraph, Character, Table, Numbering_ name)을 가지고 있으며, 이 값을 통해 어떤 요소를 지정한 스타일인지 식별할 수 있다. 해당 태그의 하위 요소(name)에서 스타일명과 함께 세부 스타일을 지정하여 style.xml 파일에 포함한다. 문서 내에 해당 필드명(paragraph_name, characher_name, table_name, numbering_name)으로 정의된 내용은 없으나 속성명은 각각 문단, 글자, 표, 번호 지정에 사용된 스타일 명 리스트라는 의미로 명명된 것이다.
 
@@ -147,22 +147,22 @@ type:table_name | [name]-[val] | 표 스타일 리스트 | 필수
 type:numbering_name | [name]-[val] | 번호 지정 스타일 리스트 | 필수
 type:paragraph_name | [name]-[val] | 문단 스타일 리스트 | 필수
 
-### FONTTABLE.XML 특징
+## FONTTABLE.XML 특징
 
 /word/fontTable.xml : 문서에 정의된 글꼴 정보를 포함하는 XML 파일이다. 문서 내 사용되는 다양한 글꼴들의 정보와 속성들이 여기에 정의된다. 각 글꼴의 이름, 크기, 스타일 등이 이 파일에 포함된다. 
 fontTable.xml 파일 내 자식 요소 중 "font" 태그를 가진 노드의 자식 요소를 순회하면서 해당 요소의 "name"(속성)의 키와 값을 추출한다
 
-* fontTable.xml 문서 내 정의된 속성 정리
+### fontTable.xml 문서 내 정의된 속성 정리
 
 파일 내 속성 경로 | 속성 명 | 속성 내용 | 필수 여부
 -- | -- | -- | --
 [font] | name | 폰트 이름 리스트 가져오기 | 필수
 
-###	HEADERN.XML/FOOTERN.XML 특징 
+##	HEADERN.XML/FOOTERN.XML 특징 
 
 /word/headerN.xml, /word/footerN.xml : 문서의 머리말(header)과 꼬리말(footer) 내용을 정의하는 XML 파일이다. 각 파일은 문서의 각 섹션에 대한 머리말과 꼬리말 내용을 정의한다. 머리말(header)과 꼬리말(footer) 에 들어갈 텍스트, 그림, 페이지 번호 등의 이 파일에 포함된다. N은 섹션 번호를 나타내며, 여러 섹션에 대한 머리말과 꼬리말이 따로 정의된다.
 
-* headerN.xml/footerN.xml 문서 내 정의된 속성 정리
+### headerN.xml/footerN.xml 문서 내 정의된 속성 정리
 
 
 파일 내 속성 경로 | 속성 명 | 속성 내용 | 필수 여부
