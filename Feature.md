@@ -41,12 +41,12 @@
 
 ###	STYLE.XML 특징 
 /word/style.xml : Microsoft Word 문서에서 사용되는 스타일을 정의하는 XML 파일이다. 문서의 서식, 글꼴, 크기, 간격 등을 지정하는 스타일 요소들이 포함된다. 문서 전체에 적용되는 기본 스타일부터 문서 내 정의된 폰트 스타일 까지 다양한 스타일이 포함된다.
-서식 추출은  styles.xml 파일 내 자식 요소 중 "rPrDefault", "pPrDefault", "style" 태그를 가진 노드의 자식 요소를 순환하며 해당 요소의 속성의 키와 값을 추출한다.
-rPrDefault는 현재 문서에 대한 기본 실행 속성 집합을 지정한다. 실제 실행 속성은 현재 요소의 rPr 하위 요소 내에 저장된다. 이 요소가 생략되면 현재 문서의 기본 실행 속성이 존재하지 않는다. 즉, 문서에 기본 실행 속성이 정의되지 않는다면 기본값은 응용프로그램에서 정의한 내용으로 표현된다. 
-pPrDefault는 현재 문서에 대한 기본 단락 속성 집합을 지정한다. 실제 단락 속성은 현재 요소의 pPr 자식 요소 내에 저장된다. 이 요소가 생략되면 현재 문서의 기본 단락 속성이 존재하지 않는다. 즉, 문서에 기본 실행 속성이 정의되지 않는다면 기본값은 응용프로그램에서 정의한 내용으로 표현된다.  
-style 요소는 type 속성(attribute) 값으로 문단, 글자, 표, 번호 지정(Paragraph, Character, Table, Numbering_ name)을 가지고 있으며, 이 값을 통해 어떤 요소를 지정한 스타일인지 식별할 수 있다. 해당 태그의 하위 요소(name)에서 스타일명과 함께 세부 스타일을 지정하여 style.xml 파일에 포함한다. 문서 내에 해당 필드명(paragraph_name, characher_name, table_name, numbering_name)으로 정의된 내용은 없으나 속성명은 각각 문단, 글자, 표, 번호 지정에 사용된 스타일 명 리스트라는 의미로 명명된 것이다.
+서식 추출은  styles.xml 파일 내 자식 요소 중 "rPrDefault", "pPrDefault", "style" 태그를 가진 노드의 자식 요소를 순환하며 해당 요소의 속성의 키와 값을 추출한다. \\
 
 * style.xml 내 rPrDefault 속성 정리
+
+rPrDefault는 현재 문서에 대한 기본 실행 속성 집합을 지정한다. 실제 실행 속성은 현재 요소의 rPr 하위 요소 내에 저장된다. 이 요소가 생략되면 현재 문서의 기본 실행 속성이 존재하지 않는다. 즉, 문서에 기본 실행 속성이 정의되지 않는다면 기본값은 응용프로그램에서 정의한 내용으로 표현된다. 
+
 파일 내 속성 경로 | 속성 명 | 속성 내용 | 필수 여부
 -- | -- | -- | --
 [rPrDefault]-[rPr]-[rFonts] | hint | 표시에 사용될 글꼴에 대한 힌트를   word 설정 (default, fareast, cs) | 선택
@@ -113,6 +113,8 @@ style 요소는 type 속성(attribute) 값으로 문단, 글자, 표, 번호 지
 
 * style.xml 내 pPrDefault 속성 정리
 
+pPrDefault는 현재 문서에 대한 기본 단락 속성 집합을 지정한다. 실제 단락 속성은 현재 요소의 pPr 자식 요소 내에 저장된다. 이 요소가 생략되면 현재 문서의 기본 단락 속성이 존재하지 않는다. 즉, 문서에 기본 실행 속성이 정의되지 않는다면 기본값은 응용프로그램에서 정의한 내용으로 표현된다.  
+
 파일 내 속성 경로 | 속성 명 | 속성 내용 | 필수 여부
 -- | -- | -- | --
 [pPrDefault]-[spacing] | after | 문단 뒤의 기본 간격 | 선택
@@ -134,7 +136,9 @@ style 요소는 type 속성(attribute) 값으로 문단, 글자, 표, 번호 지
 [pPrDefault]-[jc] | val | 문단에 대한 기본 정당성을 지정   (left/center/right/both/medium-kashida/distribute/list-tab/high-kashida/low-kashida/thai-distribute) | 선택
 
 * style.xml 내 문단, 글자, 표 번호의 스타일 명 속성 리스트
-* 
+
+style 요소는 type 속성(attribute) 값으로 문단, 글자, 표, 번호 지정(Paragraph, Character, Table, Numbering_ name)을 가지고 있으며, 이 값을 통해 어떤 요소를 지정한 스타일인지 식별할 수 있다. 해당 태그의 하위 요소(name)에서 스타일명과 함께 세부 스타일을 지정하여 style.xml 파일에 포함한다. 문서 내에 해당 필드명(paragraph_name, characher_name, table_name, numbering_name)으로 정의된 내용은 없으나 속성명은 각각 문단, 글자, 표, 번호 지정에 사용된 스타일 명 리스트라는 의미로 명명된 것이다.
+
 파일 내 속성 경로 | 속성 명 | 속성 내용 | 필수 여부
 -- | -- | -- | --
 type:paragraph_name | [name]-[val] | 문단 스타일 리스트 | 필수
