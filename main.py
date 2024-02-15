@@ -51,6 +51,7 @@ class PreProcessingThread(QThread):
             self.output_path,
             f"[{now.strftime('%Y%m%d')}] preprocessing_{os.path.basename(self.folder_path)}.csv"
         )
+        print(dataframe)
         DP.datapreprocessing(dataframe, outputcsv)
 
 
@@ -87,7 +88,7 @@ class WindowClass(QMainWindow):
             self.ui.folder_path.setText(FolderPath)
         else:
             QMessageBox.about(self, "Error", "Not selected!")
-        print("워드 파일이 모여 있는 폴더 경로 선택 ")
+        print("Select the folder path where the .docx files are clustered")
 
     # 전처리된 파일 출력 하는 경로
     def OutputPath_Click(self):
@@ -96,13 +97,13 @@ class WindowClass(QMainWindow):
             self.ui.output_Path.setText(outputpath)
         else:
             QMessageBox.about(self, "Error", "Not selected!")
-        print("전처리된 파일 출력 하는 경로 ")
+        print("Path to output preprocessed files")
 
     # 전처리된 파일 선택하기
     def preprocessing_fileselect_Click(self):
         FolderPath = self.ui.output_Path.displayText()
-        file_name, _ = QFileDialog.getOpenFileName(self, 'PreProcessing File Load', FolderPath,
-                                                   'All File(*);; 전처리된 파일(*.csv)')
+        file_name, _ = QFileDialog.getOpenFileName(self, 'Preprocessed File Load', FolderPath,
+                                                   'All File(*);; Preprocessed files(*.csv)')
         if file_name != '':
             file_title = os.path.basename(file_name)
             self.ui.preprocessing_filename.setText(file_title)
@@ -224,9 +225,9 @@ class WindowClass(QMainWindow):
 
             exported_data.to_csv(export_output_path, encoding='utf-8-sig')
 
-            QMessageBox.about(self, "CSV가 추출되었습니다", f"추출 경로: \n{export_output_path}")
+            QMessageBox.about(self, "CSV has been extracted", f"Extraction Path: \n{export_output_path}")
         except:
-            QMessageBox.about(self, "CSV 추출 오류", f"데이터를 추출할 수 없습니다")
+            QMessageBox.about(self, "CSV Extraction Error", f"Unable to Extract Data")
 
     def filter(self, filter_text, ):
 
@@ -243,7 +244,7 @@ class WindowClass(QMainWindow):
         try:
             os.startfile(fileopenpath)
         except:
-            QMessageBox.about(self, "파일 열기 오류", fileopenpath)
+            QMessageBox.about(self, "File Open Error", fileopenpath)
 
     def start_preprocessing(self):
         self.thread = PreProcessingThread(self.ui.folder_path.displayText(), self.ui.output_Path.displayText())
@@ -255,7 +256,7 @@ class WindowClass(QMainWindow):
     def processing_finished(self):
         self.ui.PreProcessing.setEnabled(True)
         self.thread = None
-        QMessageBox.information(self, "Pre-processing 성공", "Pre-processing finished successfully!")
+        QMessageBox.information(self, "Pre-processing Success", "Pre-processing finished successfully!")
 
     def __init__(self):
         super().__init__()

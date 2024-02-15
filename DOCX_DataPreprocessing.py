@@ -71,7 +71,7 @@ def string_list_to_tsne(input_column) :
     return pd.Series(map(lambda x: x[0], data))
 
 
-def datapreprocessing (output_dataframe, output_csvfile=None) : 
+def datapreprocessing(output_dataframe, output_csvfile=None) : 
     # PCA 적용 
     column_list = ['paragraph_name', 'character_name', 'table_name', 'numbering_name', 'fontList']
     try : 

@@ -132,3 +132,5 @@ def feature_extraction(file_name) :
         if body.tag.split('}')[1] == "font" : 
             font_dic = {k.split('}')[1]: v for k, v in body.attrib.items()}
             docx_dic["fontList"].append(font_dic['name'])
+
+    return docx_dic

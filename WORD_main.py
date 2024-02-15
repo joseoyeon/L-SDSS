@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'WORD_mainPglKID.ui'
+## Form generated from reading UI file 'WORD_mainVyHHMD.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -11,6 +11,8 @@
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
+
+
 class Ui_WORD(object):
     def setupUi(self, WORD):
         if not WORD.objectName():
@@ -243,27 +245,27 @@ class Ui_WORD(object):
     # setupUi
 
     def retranslateUi(self, WORD):
-        WORD.setWindowTitle(QCoreApplication.translate("WORD", u"Word Search: 외형적 특징이 유사한 MS Word (.docx) 문서 검색 도구", None))
+        WORD.setWindowTitle(QCoreApplication.translate("WORD", u"Word Search", None))
         self.actionEXIT_Q.setText(QCoreApplication.translate("WORD", u"EXIT(Q)", None))
-        self.OutputPath.setText(QCoreApplication.translate("WORD", u"\ucd9c\ub825\ud30c\uc77c\uacbd\ub85c", None))
-        self.FolderPath.setText(QCoreApplication.translate("WORD", u"\ud3f4\ub354 \uacbd\ub85c", None))
-        self.PreProcessing.setText(QCoreApplication.translate("WORD", u"\uc804\ucc98\ub9ac \uc2dc\uc791", None))
-        self.label_3.setText(QCoreApplication.translate("WORD", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">\uc6cc\ub4dc \ud30c\uc77c \uc804\ucc98\ub9ac</span></p></body></html>", None))
-        self.similarity_ratio.setSpecialValueText(QCoreApplication.translate("WORD", u"97", None))
-        self.label.setText(QCoreApplication.translate("WORD", u"<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">\uc720\uc0ac \uce21\uc815 \uae30\uc900 </span></p></body></html>", None))
+        self.OutputPath.setText(QCoreApplication.translate("WORD", u"Output Path", None))
+        self.FolderPath.setText(QCoreApplication.translate("WORD", u"Input Path", None))
+        self.PreProcessing.setText(QCoreApplication.translate("WORD", u"Preprocessing", None))
+        self.label_3.setText(QCoreApplication.translate("WORD", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Word Data Feature Extraction and Pre-Processing</span></p></body></html>", None))
+        self.similarity_ratio.setSpecialValueText(QCoreApplication.translate("WORD", u"90", None))
+        self.label.setText(QCoreApplication.translate("WORD", u"<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">Similarity Measurement Criteria</span></p></body></html>", None))
         self.algo_select.setItemText(0, QCoreApplication.translate("WORD", u"Cosine", None))
         self.algo_select.setItemText(1, QCoreApplication.translate("WORD", u"Pearson_Correlation", None))
 
-        self.label_2.setText(QCoreApplication.translate("WORD", u"<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">\uc0ac\uc6a9\ud558\ub294 \ud53c\ucc98 \uac1c\uc218</span></p></body></html>", None))
-        self.Feature.setText(QCoreApplication.translate("WORD", u"Feature \uc120\uc815", None))
-        self.simularity_title.setText(QCoreApplication.translate("WORD", u"<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">\uc720\uc0ac\ub3c4 \uce21\uc815 \uc54c\uace0\ub9ac\uc998</span></p></body></html>", None))
-        self.title2.setText(QCoreApplication.translate("WORD", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">\uc6cc\ub4dc \ud30c\uc77c \uc720\uc0ac\ub3c4 \uac80\uc0c9</span></p></body></html>", None))
-        self.export_csv.setText(QCoreApplication.translate("WORD", u"CSV 추출하기", None))
-        self.label_4.setText(QCoreApplication.translate("WORD", u"<html><head/><body><p align=\"center\">\uac80\uc0c9 : </p></body></html>", None))
-        self.preprocess_file.setText(QCoreApplication.translate("WORD", u"\ud30c\uc77c \ub85c\ub4dc", None))
-        self.search_similarity.setText(QCoreApplication.translate("WORD", u"\uac80\uc0c9", None))
-        self.fileopen.setText(QCoreApplication.translate("WORD", u"\ud30c\uc77c \uc5f4\uae30", None))
-        self.label_5.setText(QCoreApplication.translate("WORD", u"\uac80\uc0c9 \ub300\uc0c1 \ud30c\uc77c \uba85: ", None))
+        self.label_2.setText(QCoreApplication.translate("WORD", u"<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">Number of Features used</span></p></body></html>", None))
+        self.Feature.setText(QCoreApplication.translate("WORD", u"Feature Selection", None))
+        self.simularity_title.setText(QCoreApplication.translate("WORD", u"<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">Similarity Measurement Algorithm</span></p></body></html>", None))
+        self.title2.setText(QCoreApplication.translate("WORD", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Word Data Search</span></p></body></html>", None))
+        self.export_csv.setText(QCoreApplication.translate("WORD", u"Export CSV", None))
+        self.label_4.setText(QCoreApplication.translate("WORD", u"<html><head/><body><p align=\"center\">Search : </p></body></html>", None))
+        self.preprocess_file.setText(QCoreApplication.translate("WORD", u"File Load", None))
+        self.search_similarity.setText(QCoreApplication.translate("WORD", u"Search", None))
+        self.fileopen.setText(QCoreApplication.translate("WORD", u"File Open", None))
+        self.label_5.setText(QCoreApplication.translate("WORD", u"Search File Name: ", None))
         self.menuFile.setTitle(QCoreApplication.translate("WORD", u"File", None))
     # retranslateUi
 

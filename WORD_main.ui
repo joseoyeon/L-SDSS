@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>HWP</class>
- <widget class="QMainWindow" name="HWP">
+ <class>WORD</class>
+ <widget class="QMainWindow" name="WORD">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -46,7 +46,7 @@
         <item row="2" column="2">
          <widget class="QPushButton" name="OutputPath">
           <property name="text">
-           <string>출력파일경로</string>
+           <string>Output Path</string>
           </property>
          </widget>
         </item>
@@ -63,21 +63,21 @@
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="text">
-           <string>폴더 경로</string>
+           <string>Input Path</string>
           </property>
          </widget>
         </item>
         <item row="3" column="2">
          <widget class="QPushButton" name="PreProcessing">
           <property name="text">
-           <string>전처리 시작</string>
+           <string>Preprocessing</string>
           </property>
          </widget>
         </item>
         <item row="0" column="0" colspan="3">
          <widget class="QLabel" name="label_3">
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;워드 파일 전처리&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Word Data Feature Extraction and Pre-Processing&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="margin">
            <number>10</number>
@@ -111,7 +111,7 @@
         <item row="9" column="1">
          <widget class="QLabel" name="label">
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;유사 측정 기준 &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Similarity Measurement Criteria&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
         </item>
@@ -139,7 +139,7 @@
         <item row="9" column="2">
          <widget class="QLabel" name="label_2">
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;사용하는 피처 개수&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Number of Features used&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
         </item>
@@ -149,7 +149,7 @@
            <bool>true</bool>
           </property>
           <property name="text">
-           <string>Feature 선정</string>
+           <string>Feature Selection</string>
           </property>
           <property name="checked">
            <bool>true</bool>
@@ -159,7 +159,7 @@
         <item row="9" column="0">
          <widget class="QLabel" name="simularity_title">
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;유사도 측정 알고리즘&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Similarity Measurement Algorithm&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
         </item>
@@ -168,7 +168,7 @@
       <item row="1" column="0" colspan="2">
        <widget class="QLabel" name="title2">
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;워드 파일 유사도 검색&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Word Data Search&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="margin">
          <number>10</number>
@@ -229,7 +229,7 @@
          <enum>Qt::LeftToRight</enum>
         </property>
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;검색 : &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Search : &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -248,7 +248,7 @@
          <cursorShape>PointingHandCursor</cursorShape>
         </property>
         <property name="text">
-         <string>파일 로드</string>
+         <string>File Load</string>
         </property>
         <property name="autoRepeatDelay">
          <number>300</number>
@@ -258,7 +258,7 @@
       <item row="6" column="6">
        <widget class="QPushButton" name="search_similarity">
         <property name="text">
-         <string>검색</string>
+         <string>Search</string>
         </property>
        </widget>
       </item>
@@ -275,7 +275,7 @@
       <item row="6" column="5">
        <widget class="QPushButton" name="fileopen">
         <property name="text">
-         <string>파일 열기</string>
+         <string>File Open</string>
         </property>
        </widget>
       </item>
@@ -288,7 +288,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>검색 대상 파일 명: </string>
+         <string>Search File Name: </string>
         </property>
        </widget>
       </item>
@@ -333,7 +333,7 @@
      <x>0</x>
      <y>0</y>
      <width>1203</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
