@@ -17,3 +17,6 @@
 - re
 - zipfile
 - xml.etree.ElementTree
+
+### 보고서 
+[[DFRC-AI] Tech Contest Report - 개인정보제거.pdf](https://github.com/user-attachments/files/17245929/DFRC-AI.Tech.Contest.Report.-.pdf)
