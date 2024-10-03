@@ -4,7 +4,7 @@
 ![Fig1](https://github.com/joseoyeon/PAPER/assets/46625602/5ce063db-b01b-4db5-b85c-578901466bef)
 
 ## Feature Used 
-![https://github.com/joseoyeon/L-SDSS/blob/master/Feature.md](https://github.com/joseoyeon/L-SDSS/blob/master/Feature.md)
+[https://github.com/joseoyeon/L-SDSS/blob/master/Feature.md](https://github.com/joseoyeon/L-SDSS/blob/master/Feature.md)
 
 ### cx_freeze로 앱 만들때 필요한 모듈
 - PyQt5.QtWidgets
